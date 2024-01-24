@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/home/find">
+    <input type="text" name="name">
+    <button>find</button>
+</form>
+<h2>Danh sach san pham</h2>
+<a href="/home/create">Tao san pham moi</a>
+<table border="1">
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Fax</td>
+        <td>Des</td>
+        <td>Price</td>
+        <td>Day</td>
+        <td>Edit/Delete</td>
+        <td>View</td>
+    </tr>
+    <tr th:each="o : ${products}">
+        <td th:text="${o.id}"></td>
+        <td th:text="${o.name}"></td>
+        <td th:text="${o.fax}"></td>
+        <td th:text="${o.description}"></td>
+        <td th:text="${o.price}"></td>
+        <td th:text="${o.day}"></td>
+        <td>
+            <a th:href="@{/home/edit/__${o.id}__}">Edit</a>
+            <a th:href="@{/home/delete/__${o.id}__}">Delete</a>
+        </td>
+        <td>
+            <a th:href="@{/home/inf/__${o.id}__}">Inf</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

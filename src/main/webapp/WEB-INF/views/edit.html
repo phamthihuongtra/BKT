@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Chinh sua san pham</h2>
+<form action="/home/edit/{id}" method="post">
+    <input type="hidden" name="id" th:value="${o.id}">
+    <input type="text" name="name" placeholder="name" th:value="${o.name}">
+    <input type="text" name="fax" placeholder="fax" th:value="${o.fax}">
+    <input type="text" name="description" placeholder="description" th:value="${o.description}">
+    <input type="number" name="price" placeholder="price" th:value="${o.price}">
+    <input type="text" name="day" placeholder="day" th:value="${o.day}">
+    <button>Luu</button>
+</form>
+</body>
+</html>
